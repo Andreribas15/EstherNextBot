@@ -30,7 +30,7 @@ async def ai_lycia(url):
 @LYCIA.on_message(filters.command("Lycia"))
 async def Lycia(_, message):
     if len(message.command) < 2:
-        await message.reply_text("Lycia AI Voice Chatbot")
+        await message.reply_text("Esther AI Voice Chatbot")
         return
     text = message.text.split(None, 1)[1]
     lycia = text.replace(" ", "%20")
@@ -43,7 +43,7 @@ async def Lycia(_, message):
     except Exception as e:
         await m.edit(str(e))
         return
-    await m.edit("Made By @madepranav...")
+    await m.edit("Made By @Andre_Ribas...")
     LyciaVoice = await ai_lycia(VoiceAi)
     await m.edit("Repyping...")
     await message.reply_audio(audio=LyciaVoice, title=chatbot, performer=name)
